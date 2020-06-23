@@ -8,10 +8,16 @@ module.exports = (app) => {
     })
   );
 
-  app.get("/auth/google/callback", passport.authenticate("google"));
+  app.get(
+    "/auth/google/callback",
+    passport.authenticate("google", { failureRedirect: "/" }),
+    (req, res) => {
+      res.redirect("/surveys");
+    }
+  );
   app.get("/api/logout", (req, res) => {
     req.logout();
-    res.send(req.user);
+    res.redirect("/");
   });
   app.get("/api/current_user", (req, res) => {
     res.send(req.user);
@@ -22,11 +28,9 @@ module.exports = (app) => {
   );
   app.get(
     "/auth/facebook/callback",
-    passport.authenticate("facebook", { failureRedirect: "/login" }),
+    passport.authenticate("facebook", { failureRedirect: "/" }),
     function (req, res) {
-      // Successful authentication, redirect home.
-      res.redirect("/api/current_user");
+      res.redirect("/surveys");
     }
   );
-  app.get('/', (req,res) => {res.send('login page')})
 };
