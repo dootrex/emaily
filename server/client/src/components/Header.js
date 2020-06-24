@@ -27,9 +27,11 @@ class Header extends Component {
       default:
         return (
           <ul className="right">
-            <li>
+            <li>Hello, {this.props.auth.userName}</li>
+            <li style={{ margin: "0 10px" }}>
               <StripeBilling />
             </li>
+            <li>Credit:{this.props.auth.credits}</li>
             <li>
               <a href="/api/logout">Logout</a>
             </li>

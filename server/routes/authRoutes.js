@@ -1,5 +1,5 @@
 const passport = require("passport");
-
+//exporting a nameless function with arguement app which is used in index.js
 module.exports = (app) => {
   app.get(
     "/auth/google",

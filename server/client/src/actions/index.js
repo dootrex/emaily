@@ -10,7 +10,10 @@ export const fetchUser = () => async (dispatch) => {
   const res = await axios.get("/api/current_user");
   dispatch({ type: FETCH_USER, payload: res.data });
 };
-
+//when we get the response from the API, update the value of reducer, reducer pulls off
+//the new user model, since there is new state everything rerenders. TADA
+//this works very well because we use same type of action and authreducer is listening for
+//that specific action
 export const handleToken = (token) => async (dispatch) => {
   const res = await axios.post("/api/stripe", token);
   dispatch({ type: FETCH_USER, payload: res.data });
