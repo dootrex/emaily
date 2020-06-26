@@ -3,7 +3,7 @@ import { FETCH_USER } from "../actions/types";
 export default function (state = null, action) {
   switch (action.type) {
     case FETCH_USER:
-      return action.payload || false; //when noone looged in it returns empty string which is falsy
+      return action.payload || false; //when noone looged in action.payload returns empty string which is falsy
     default:
       return state;
   }

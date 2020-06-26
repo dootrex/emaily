@@ -6,6 +6,7 @@ const passport = require("passport");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 require("./models/Users");
+require("./models/Survey");
 require("./services/passport");
 
 //starts up the mongodb connection by telling the key through mongoose
@@ -30,6 +31,7 @@ app.use(passport.initialize());
 //session makes use of serializer and deserializer function which we defined in passport file
 app.use(passport.session());
 require("./routes/authRoutes")(app);
+require("./routes/surveyRoutes")(app);
 require("./routes/billingRoutes")(app); //these return a function which takes app as an arg
 
 if (process.env.NODE_ENV === "production") {
