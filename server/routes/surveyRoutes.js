@@ -51,7 +51,7 @@ module.exports = (app) => {
         {
           $inc: { [choice]: 1 },
           $set: { "recipients.$.responded": true },
-          lastResponded: new Date(),
+          lastResponded: Date.now(),
         }
       ).exec();
     });
@@ -76,6 +76,7 @@ module.exports = (app) => {
       }),
       _user: req.user.id,
       dateSent: Date.now(),
+      lastResponded: Date.now(),
     });
     const mailer = new Mailer(survey, surveyTemplate(survey));
     try {

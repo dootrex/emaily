@@ -24,12 +24,12 @@ class SurveyNew extends Component {
   }
 
   render() {
-    return <div>{this.renderContent()}</div>;
+    return <div className="container">{this.renderContent()}</div>;
   }
 }
 
 //since we didnt give it the unmount key it allows us to navigate to a differnt page and
-//all the values get dumbed away which is the default behaviour of redux form
+//all the values get dumped away which is the default behaviour of redux form
 //checkout surveyForm for the other behaviour
 export default reduxForm({
   form: "surveyForm",
