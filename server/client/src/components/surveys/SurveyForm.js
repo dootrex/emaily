@@ -18,6 +18,8 @@ class SurveyForm extends Component {
             type="text"
             label={label}
             name={name}
+            //component could also be a simple input statement or any other
+            //html component
             component={SurveyField}
           />
         ))}
@@ -49,13 +51,13 @@ function validate(values) {
       errors[name] = "This field cannot be left empty.";
     }
   });
-
   //if errors is returned empty redux form think its all good
   return errors;
 }
 //reduxForm only takes one argument
 export default reduxForm({
   validate: validate,
+  //he name of your form and the key to where your form's state will be mounted under the redux-form reducer
   form: "surveyForm",
   destroyOnUnmount: false,
 })(SurveyForm);

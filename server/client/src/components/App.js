@@ -3,8 +3,6 @@ import { BrowserRouter, Route } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actions from "../actions";
 
-import "./App.css";
-
 import Header from "./Header";
 import Landing from "./Landing";
 import Dashboard from "./Dashboard";
@@ -19,7 +17,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <ParticlesBg type="circle" bg={true} />
+        <ParticlesBg type="square" bg={true} />
         {/* BrowserRouter only takes one child */}
         <BrowserRouter>
           <Header />

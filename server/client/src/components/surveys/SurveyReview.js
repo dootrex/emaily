@@ -8,15 +8,20 @@ const SurveyReview = ({ formValues, onCancel, submitSurvey, history }) => {
   const reviewFields = formFields.map((field) => {
     return (
       <div key={field.name}>
-        <label>{field.label}</label>
-        <div>{formValues[field.name]}</div>
+        <label style={{ fontSize: "1rem", color: "#3d3d3b" }}>
+          {field.label}
+        </label>
+        <div sytle={{ fontSize: "2rem", color: "black" }}>
+          {formValues[field.name]}
+        </div>
+        <hr></hr>
       </div>
     );
   });
 
   return (
     <div>
-      <h3>Confirm Your Survey Details</h3>
+      <h3>Please confirm your details.</h3>
       {reviewFields}
       <button
         className="yellow darken-3 white-text btn-flat left"
@@ -26,9 +31,9 @@ const SurveyReview = ({ formValues, onCancel, submitSurvey, history }) => {
       </button>
       <button
         onClick={() => submitSurvey(formValues, history)}
-        className="green btn-flat right white-text"
+        className="green btn-flat right white-text center"
       >
-        Send Survey<i className="material-icons">email</i>
+        Send Survey <i className="material-icons">email</i>
       </button>
     </div>
   );
