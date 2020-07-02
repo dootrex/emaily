@@ -16,7 +16,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{ fontFamily: "Helvetica" }}>
         <ParticlesBg type="square" bg={true} />
         {/* BrowserRouter only takes one child */}
         <BrowserRouter>

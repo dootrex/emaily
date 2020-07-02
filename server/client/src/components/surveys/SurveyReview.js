@@ -21,19 +21,21 @@ const SurveyReview = ({ formValues, onCancel, submitSurvey, history }) => {
 
   return (
     <div>
-      <h3>Please confirm your details.</h3>
+      <h3>Please confirm your details</h3>
       {reviewFields}
       <button
-        className="yellow darken-3 white-text btn-flat left"
+        className="yellow darken-3 white-text btn-flat left waves-effect"
         onClick={onCancel}
       >
         Back
       </button>
       <button
         onClick={() => submitSurvey(formValues, history)}
-        className="green btn-flat right white-text center"
+        type="submit"
+        name="action"
+        className="waves-effect waves-light green btn-flat right white-text center"
       >
-        Send Survey <i className="material-icons">email</i>
+        <i className="material-icons">send</i>
       </button>
     </div>
   );
@@ -41,6 +43,7 @@ const SurveyReview = ({ formValues, onCancel, submitSurvey, history }) => {
 
 function mapStatetoProps(state) {
   return {
+    //state structure can be obtained by console loggin here
     formValues: state.form.surveyForm.values,
   };
 }
