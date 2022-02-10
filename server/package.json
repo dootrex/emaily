@@ -24,7 +24,7 @@
     "jquery": "^3.5.1",
     "lodash": "^4.17.15",
     "mongoose": "^5.9.19",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "nodemon": "^2.0.4",
     "particles-bg": "^2.5.0",
     "passport": "^0.4.1",
